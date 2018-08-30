@@ -10,6 +10,8 @@ import Reader from './Reader';
 
 import EPub from 'epub-rn';
 
+import PDF from 'rn-pdf-reader-js'
+
 export default class Texts extends React.Component {
 
   state = {
@@ -105,6 +107,7 @@ export default class Texts extends React.Component {
 
   async downloadEpub() {
     await Expo.DocumentPicker.getDocumentAsync({type: "application/epub+zip"}).then(async (dat) => {
+      PDF.pa
       console.log(dat.uri)
       epub = new EPub(dat.uri)
       epub.parse()
